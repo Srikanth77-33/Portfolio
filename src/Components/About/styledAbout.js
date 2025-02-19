@@ -10,6 +10,7 @@ export const StyledAbout = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 48px;
     img {
       width: 100%;
     }
@@ -27,6 +28,7 @@ export const StyledAbout = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 48px;
     .skillCard {
       display: table !important;
       opacity: 0.93 !important;
@@ -55,8 +57,12 @@ export const StyledAbout = styled.div`
   }
 
   @media (max-width: 699px) {
+    padding: 64px 10vw;
     .desc {
       flex-direction: column;
+      .aboutSvg {
+        margin-top: 48px;
+      }
     }
   }
 `;

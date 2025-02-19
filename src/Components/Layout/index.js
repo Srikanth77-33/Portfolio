@@ -1,5 +1,4 @@
 import { Layout } from "antd";
-import logoPng from "../../Assets/logo.png";
 import "./index.css";
 import {
   HomeOutlined,
@@ -9,9 +8,10 @@ import {
 } from "@ant-design/icons";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
-import { FaLinkedin, FaGithub  } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
+import { HiOutlineNewspaper } from "react-icons/hi2";
 
 const { Header, Content, Footer } = Layout;
 const navs = [
@@ -25,9 +25,11 @@ const HomeLayout = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const linkedInUrl = "https://www.linkedin.com/in/srikanth-reddy-peram-8a2678211";
+  const linkedInUrl =
+    "https://www.linkedin.com/in/srikanth-reddy-peram-8a2678211";
   const gitHubUrl = "https://github.com/Srikanth77-33";
-  const instaUrl = "https://www.instagram.com/srikanthre7/?igsh=dTQzYmdwYmpndmZo&utm_source=qr#";
+  const instaUrl =
+    "https://www.instagram.com/srikanthre7/?igsh=dTQzYmdwYmpndmZo&utm_source=qr#";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,11 +44,12 @@ const HomeLayout = ({ children }) => {
       <Header>
         <div className={`navbar ${isScrolled ? "scrolled" : "transparent"}`}>
           <div className="logo">
-            <img
-              src={logoPng}
-              alt="logo"
-              style={{ width: "50px", height: "40px" }}
-            />
+            <Link to="/">
+              <HiOutlineNewspaper />
+              <span>
+                <b>SR</b>
+              </span>
+            </Link>
           </div>
 
           <div className="hamburgerMenu">
@@ -82,7 +85,11 @@ const HomeLayout = ({ children }) => {
         >
           <div className="hamburgerNavs">
             {navs.map(({ title, icon }) => (
-              <Link className="nav" to={`/${title.toLowerCase()}`} onClick={() => setIsOpen(!isOpen)}>
+              <Link
+                className="nav"
+                to={`/${title.toLowerCase()}`}
+                onClick={() => setIsOpen(!isOpen)}
+              >
                 <span className="icon">{icon}</span>
                 <span className="title">{title}</span>
               </Link>
@@ -98,10 +105,30 @@ const HomeLayout = ({ children }) => {
         <div>Designed and Developed by Srikanth Reddy</div>
         <div>Copyright ©{new Date().getFullYear()} SR</div>
         <div>
-          <span><a href={linkedInUrl} target="_blank" rel="noreferrer"><FaLinkedin /></a></span>
-          <span><a href={gitHubUrl} target="_blank" rel="noreferrer"><FaGithub /></a></span>
-          <span><a href="mailto:srikanthreddyperam77@gmail.com" target="_blank" rel="noreferrer"><IoIosMail /></a></span>
-          <span><a href={instaUrl} target="_blank" rel="noreferrer"><AiFillInstagram /></a></span>
+          <span>
+            <a href={linkedInUrl} target="_blank" rel="noreferrer">
+              <FaLinkedin />
+            </a>
+          </span>
+          <span>
+            <a href={gitHubUrl} target="_blank" rel="noreferrer">
+              <FaGithub />
+            </a>
+          </span>
+          <span>
+            <a
+              href="mailto:srikanthreddyperam77@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IoIosMail />
+            </a>
+          </span>
+          <span>
+            <a href={instaUrl} target="_blank" rel="noreferrer">
+              <AiFillInstagram />
+            </a>
+          </span>
         </div>
       </Footer>
     </Layout>

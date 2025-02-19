@@ -27,6 +27,7 @@ span {
     justify-content: space-around;
     column-gap: 24px;
     row-gap: 48px;
+    margin-top: 48px;
 }
 
 .content {

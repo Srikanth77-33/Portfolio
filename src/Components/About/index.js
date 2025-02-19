@@ -37,7 +37,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div style={{ flex: 1}}>
+        <div style={{ flex: 1 }}>
           <img className="aboutSvg" src={aboutSvg} alt="AboutSVG" />
         </div>
       </div>

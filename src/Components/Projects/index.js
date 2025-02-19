@@ -38,12 +38,12 @@ const cards = [
 const Projects = () => {
   return (
     <StyledProjects>
-      <h1 style={{ textAlign: "center", fontWeight: 400, fontSize: "3em" }}>
+      <div style={{ textAlign: "center", fontWeight: 400, fontSize: "3em" }}>
         My Recent <span>Works</span>
-      </h1>
-      <p style={{ textAlign: "center", fontWeight: 400, fontSize: "1.5em" }}>
+      </div>
+      <div style={{ textAlign: "center", fontWeight: 400, fontSize: "1.5em", opacity: '0.6' }}>
         Here are a few projects I've worked on recently.
-      </p>
+      </div>
       <div className="projects">
         {cards.map((card) => (
           <Card
